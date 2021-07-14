@@ -6,6 +6,8 @@ const cors=require('cors')
 const {google} =require("googleapis");
 require("dotenv").config();
 
+const PORT=process.env.PORT || 3000;
+
 app.set("view engine","ejs");
 app.use(express.static("public"));
 app.use(cors());
@@ -71,7 +73,7 @@ app.post("/connect",async(req,res)=>{
 
 
 
-app.listen(3000,()=>{
-    console.log("server is listening on 3000");
+app.listen(PORT,()=>{
+    console.log("server is listening on ",PORT);
 })
 
